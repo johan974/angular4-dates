@@ -1,0 +1,39 @@
+<div>
+  <strong>Basic angular4 datepicker</strong><br>
+  <div>
+    <input type="date" [ngModel] ="dt1 | date:'yyyy-MM-dd'" (ngModelChange)="dt1 = $event" [value]="dt1 | date:'yyyy-MM-dd'"><br>
+  Date 1: {{dt1| date:'dd-MM-yyyy'}}
+  </div>
+</div>
+<br><br>
+<div>
+Date demo 2: <br><br>
+<input type="date" #myDate [value]="dt2 | date:'yyyy-MM-dd'" (input)="dt2=parseDate($event.target.value)" /><br>
+Date 2: {{dt2| date:'yyyy-MM-dd'}} <br>
+Date 3: {{dt3| date:'yyyy-MM-dd'}}
+</div>
+<br><br>
+<div>
+  <strong>PrimeNG</strong><br>
+  npm install primeng --save<br>
+  Imports in app.module.ts: import CalendarModule from 'primeng/primeng';<br>
+  Imports in app.module.ts: import BrowserAnimationsModule from '@angular/platform-browser/animations';<br>
+  Install font awesome, anders geen up/down voor tijd:  npm install --save font-awesome angular-font-awesome<br>
+  Styles in angular-cli.json:<br>
+  <div class="input-control">
+    <label for="dt5">Basic:</label>
+    <p-calendar [(ngModel)]="dt5" id="dt5" showTime="showTime" hourFormat="24"></p-calendar>
+  </div>
+</div>
+<br><br>
+<div>
+  <strong>NG-pick-datetime</strong><br>
+  Install: npm install ng-pick-datetime --save<br>
+  Imports in app.module.ts: DateTimePickerModule<br>
+  Styles in angular-cli.json: "../node_modules/ng-pick-datetime/assets/style/picker.min.css",<br>
+  <div class="input-control">
+    <label for="dt4">Basic:</label>
+    <owl-date-time [(ngModel)]="dt4" id="dt4" [inputId]="dt4"></owl-date-time>
+  </div>
+</div>
+
